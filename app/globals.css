@@ -9,3 +9,7 @@
 p {
   @apply text-gray-700 text-base;
 }
+
+.stack {
+  @apply flex flex-col space-y-10;
+}
