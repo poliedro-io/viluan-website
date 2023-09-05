@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import React from "react";
-import ServicesCards from "./ServicesCards";
+import SpecialtiesCards from "../../components/SpecialtiesCards";
 
 export default function Services() {
   return (
@@ -11,7 +11,7 @@ export default function Services() {
           title="Nuestros servicios médicos"
           align="center"
         />
-        <ServicesCards />
+        <SpecialtiesCards items={[]} />
       </div>
     </div>
   );

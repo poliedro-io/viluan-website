@@ -1,4 +1,3 @@
-import Button from "../components/Button";
 import AboutUs from "./components/AboutUs";
 import Banner from "./components/Banner";
 import Contact from "./components/Contact";
@@ -8,13 +7,13 @@ import Specialists from "./components/Specialists";
 
 export default function HomePage() {
   return (
-    <div>
+    <>
       <Hero />
       <AboutUs />
       <Services />
       <Banner />
       <Specialists />
       <Contact />
-    </div>
+    </>
   );
 }

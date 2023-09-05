@@ -11,5 +11,5 @@ p {
 }
 
 .stack {
-  @apply flex flex-col space-y-10;
+  @apply flex flex-col space-y-6;
 }

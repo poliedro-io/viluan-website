@@ -13,7 +13,7 @@ export default function Hero() {
           <p className="text-black">
             El parrafo genial que acompaña al titulo de la paginita
           </p>
-          <Button label="Agendar atención" href="/agendamiento" />
+          <Button label="Agendar atención" href="/agendar" />
         </div>
       </div>
     </div>
