@@ -1,17 +1,25 @@
 import Header from "@/components/Header";
 import React from "react";
 import SpecialistsCards from "../../components/DoctorsCards";
+import { Doctor } from "@/types";
+import Button from "@/components/Button";
 
-export default function Doctors() {
+interface DoctorsProps {
+  data: Doctor[];
+}
+export default function Doctors({ data }: DoctorsProps) {
   return (
-    <div className="bg-blue-100">
+    <div className="bg-cyan-50">
       <div className="section">
         <Header
           uppertitle="nuestros especialistas"
-          title="Doctores geniales medicina y odontólogos"
+          title="Un equipo de profesionales altamente calificados"
           align="center"
         />
-        <SpecialistsCards items={[]} />
+        <SpecialistsCards items={data} count={3} />
+        <div className="mt-10 flex justify-center">
+          <Button label="Ver todos los especialistas" action="/doctores" />
+        </div>
       </div>
     </div>
   );

@@ -3,10 +3,18 @@ import AboutUs from "./components/AboutUs";
 import Banner from "./components/Banner";
 import Contact from "./components/Contact";
 import Hero from "./components/Hero";
-import Services from "./components/Specialties";
 import Doctors from "./components/Doctors";
+import { getDoctors } from "@/services/getDoctors";
+import { getSpecialties } from "@/services/getSpecialties";
+import { Doctor, Specialty } from "@/types";
+import Specialties from "./components/Specialties";
 
-export default function HomePage() {
+interface HomeProps {
+  doctors: Doctor[];
+  specialties: Specialty[];
+}
+
+export default function HomePage({ doctors, specialties }: HomeProps) {
   return (
     <>
       <Head>
@@ -17,10 +25,16 @@ export default function HomePage() {
       </Head>
       <Hero />
       <AboutUs />
-      <Services />
+      <Specialties data={specialties} />
       <Banner />
-      <Doctors />
+      <Doctors data={doctors} />
       <Contact />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const doctors = await getDoctors();
+  const specialties = await getSpecialties();
+  return { props: { doctors, specialties } };
 }

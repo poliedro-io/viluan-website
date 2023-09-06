@@ -11,7 +11,7 @@ p {
 }
 
 .stack {
-  @apply flex flex-col space-y-6;
+  @apply flex flex-col gap-6;
 }
 
 .form-field {
@@ -23,5 +23,11 @@ p {
 }
 
 .card {
-  @apply bg-white border border-gray-200 rounded-lg shadow hover:bg-blue-50 hover:shadow-xl;
+  transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  @apply bg-white border border-gray-200 rounded-lg shadow hover:shadow-xl;
+}
+
+.colorize-blue {
+  filter: invert(37%) sepia(18%) saturate(3531%) hue-rotate(134deg)
+    brightness(93%) contrast(84%);
 }

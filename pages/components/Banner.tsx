@@ -6,7 +6,7 @@ export default function Banner() {
     <div className="flex flex-col-reverse md:flex-row bg-primary-600">
       <div className="">
         <Image
-          className="h-full w-full object-cover "
+          className="h-full w-full object-cover"
           src={"/banner.jpg"}
           width="500"
           height="500"

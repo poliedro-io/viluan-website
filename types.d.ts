@@ -1,7 +1,8 @@
 interface Doctor {
   id: string;
   name: string;
-  specialty: string; //SpecialtyID
+  specialty: string;
+  specialtyId: string;
   email: string;
   phone: string;
   photoURL: string;

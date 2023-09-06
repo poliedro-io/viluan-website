@@ -1,37 +1,5 @@
 import { Doctor } from "../types";
-
-const MOCK_DATA: Doctor[] = [
-  {
-    id: "1",
-    name: "Dr. Juan Perez",
-    email: "",
-    phone: "",
-    photoURL: "/default.png",
-    specialty: "1",
-    summary:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. mi porta gravida at eget metus.",
-  },
-  {
-    id: "2",
-    name: "Dra. Maria Salvia",
-    email: "",
-    phone: "",
-    photoURL: "/default.png",
-    specialty: "2",
-    summary:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident reiciendis doloremque ut harum amet pariatur eveniet repudiandae iste laboriosam mollitia dolor molestias dolores iure nihil, possimus in recusandae? Id, autem.",
-  },
-  {
-    id: "3",
-    name: "Dr. Juan Salvia",
-    email: "",
-    phone: "",
-    photoURL: "/default.png",
-    specialty: "2",
-    summary:
-      "Quis, dignissimos tempore ipsum quibusdam perferendis mollitia aliquam at accusamus distinctio officiis consectetur",
-  },
-];
+import { MOCK_DATA } from "./mock-doctors";
 
 export function getDoctors(): Promise<Doctor[]> {
   return Promise.resolve(MOCK_DATA);

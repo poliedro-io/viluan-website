@@ -9,6 +9,7 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
   isDisabled?: boolean;
   block?: boolean;
+  mode: "outline" | "solid";
 }
 
 const colors = {
@@ -23,6 +24,7 @@ export default function Button({
   color = "primary",
   isDisabled = false,
   block = false,
+  mode = "solid",
 }: ButtonProps) {
   const isLink = typeof action === "string";
   const colorClass =

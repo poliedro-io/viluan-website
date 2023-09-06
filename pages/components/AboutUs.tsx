@@ -14,9 +14,10 @@ export default function AboutUs() {
             align="left"
           />
           <p className="mb-8">
-            Somos una clínica médica y odontológica enfocada en el bienestar de
-            nuestros pacientes. Contamos con un equipo de profesionales
-            altamente capacitados y con amplia experiencia en el rubro.
+            Somos una clínica médica y odontológica ubicada en Antofagasta.
+            Nuestro enfoque es la salud integral de nuestros pacientes. Contamos
+            con un equipo de profesionales altamente capacitados y con amplia
+            experiencia en medicina general y odontología.
           </p>
           <div className="grid grid-rows-3 gap-4">
             <Button label={"Agendar atención"} action="/agendar" />
