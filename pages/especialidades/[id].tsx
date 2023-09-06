@@ -1,5 +1,5 @@
 import { getSpecialties, getSpecialty } from "@/services/getSpecialties";
-import { Specialty } from "@/services/types";
+import { Specialty } from "@/types";
 import React from "react";
 
 export default function SpecialtyPage({ data }: { data: Specialty }) {

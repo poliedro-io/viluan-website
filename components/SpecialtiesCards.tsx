@@ -1,6 +1,6 @@
 "use client";
 import Button from "@/components/Button";
-import { Specialty } from "@/services/types";
+import { Specialty } from "@/types";
 import Image from "next/image";
 import React from "react";
 
@@ -34,7 +34,7 @@ export default function SpecialtiesCards({
               {selectedService.name}
             </h2>
             <p className="mb-10">{selectedService.description}</p>
-            <Button label="Agendar atención" href="/agendar" />
+            <Button label="Agendar atención" action="/agendar" />
           </div>
           <div>
             <Image

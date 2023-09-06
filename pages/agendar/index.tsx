@@ -1,5 +1,5 @@
-import Appointment from "@/components/Appointment";
 import Header from "@/components/Header";
+import Appointment from "@/components/appointment/Appointment";
 import React from "react";
 
 export default function AppointmentPage() {

@@ -1,7 +1,7 @@
 import React from "react";
 import SpecialistsCards from "../../components/DoctorsCards";
 import Header from "@/components/Header";
-import { Doctor } from "@/services/types";
+import { Doctor } from "@/types";
 import { getDoctors } from "@/services/getDoctors";
 
 export default function SpecialistsPage({ items }: { items: Doctor[] }) {
