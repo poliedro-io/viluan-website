@@ -4,7 +4,7 @@ import { getSpecialties } from "@/services/getSpecialties";
 import { Specialty } from "@/types";
 import React from "react";
 
-export default function SpecialtisPage({ items }: { items: Specialty[] }) {
+export default function SpecialtiesPage({ items }: { items: Specialty[] }) {
   return (
     <div className="section">
       <Header

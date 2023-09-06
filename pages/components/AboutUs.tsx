@@ -9,28 +9,36 @@ export default function AboutUs() {
       <div className="grid md:grid-cols-2 gap-8">
         <div>
           <Header
-            title="About Us"
-            uppertitle="Sobre nuestra clinica"
+            title="Bienvenido a Viluan"
+            uppertitle="sobre nosotros"
             align="left"
           />
           <p className="mb-8">
-            There arge many variations ohf pacgssages of sorem gpsum ilable, but
-            the majority have suffered alteration in some form, by ected humour,
-            or randomised words whi.
+            Somos una clínica médica y odontológica enfocada en el bienestar de
+            nuestros pacientes. Contamos con un equipo de profesionales
+            altamente capacitados y con amplia experiencia en el rubro.
           </p>
           <div className="grid grid-rows-3 gap-4">
             <Button label={"Agendar atención"} action="/agendar" />
-            <Button label={"Ver doctores"} action="/doctores" />
-            <Button label={"Ver servicios"} action="/especialidades" />
+            <Button
+              color="secondary"
+              label={"Ver doctores"}
+              action="/doctores"
+            />
+            <Button
+              color="secondary"
+              label={"Ver servicios"}
+              action="/especialidades"
+            />
           </div>
         </div>
 
         <Image
-          className="h-[500px] w-auto mx-auto md:ml-auto"
+          className="h-[500px] w-auto mx-auto md:ml-auto rounded-md"
           src="/about-us.webp"
           width={500}
           height={500}
-          alt="Picture of the author"
+          alt="Nuestra clínica"
         />
       </div>
     </div>

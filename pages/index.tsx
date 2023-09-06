@@ -3,7 +3,7 @@ import AboutUs from "./components/AboutUs";
 import Banner from "./components/Banner";
 import Contact from "./components/Contact";
 import Hero from "./components/Hero";
-import Services from "./components/Services";
+import Services from "./components/Specialties";
 import Doctors from "./components/Doctors";
 
 export default function HomePage() {
