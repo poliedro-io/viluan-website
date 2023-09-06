@@ -13,7 +13,7 @@ export default function SpecialtiesCards({
   const selectedService = items?.length ? items[selectedIndex] : null;
   return (
     <div className="stack">
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 gap-4">
         {items.map(({ name, iconURL }, i) => (
           <div
             key={i}
@@ -21,20 +21,22 @@ export default function SpecialtiesCards({
             className=" cursor-pointer text-center block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
           >
             <p>el icono</p>
-            <h5 className="mb-2 text-lg font-bold tracking-tight text-gray-900">
+            <h5 className="hidden md:block mb-2 text-lg font-bold tracking-tight text-gray-900">
               {name}
             </h5>
           </div>
         ))}
       </div>
       {selectedService && (
-        <div className="grid grid-cols-2">
+        <div className="grid md:grid-cols-2">
           <div>
             <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               {selectedService.name}
             </h2>
             <p className="mb-10">{selectedService.description}</p>
-            <Button label="Agendar atención" action="/agendar" />
+            <div className="hidden md:block">
+              <Button label="Agendar atención" action="/agendar" />
+            </div>
           </div>
           <div>
             <Image
@@ -44,6 +46,9 @@ export default function SpecialtiesCards({
               src={selectedService.photoURL}
               alt={selectedService.name}
             />
+            <div className="md:hidden mt-4">
+              <Button label="Agendar atención" action="/agendar" />
+            </div>
           </div>
         </div>
       )}

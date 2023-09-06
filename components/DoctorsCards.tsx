@@ -10,7 +10,7 @@ interface Props {
 export default function SpecialistsCards({ items = [] }: Props) {
   return (
     <div className="stack">
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map(({ id, name, specialty, photoURL }) => (
           <div key={id} className="card">
             <Image

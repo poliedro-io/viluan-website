@@ -4,7 +4,7 @@ import SpecialtiesCards from "../../components/SpecialtiesCards";
 
 export default function Services() {
   return (
-    <div className="bg-blue-100">
+    <div id="servicios" className="bg-blue-100">
       <div className="section">
         <Header
           uppertitle="especialidades"

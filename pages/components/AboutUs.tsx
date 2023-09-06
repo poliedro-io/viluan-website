@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <div className="section">
-      <div className="grid grid-cols-2">
+    <div id="us" className="section">
+      <div className="grid md:grid-cols-2 gap-8">
         <div>
           <Header
             title="About Us"
@@ -18,15 +18,15 @@ export default function AboutUs() {
             the majority have suffered alteration in some form, by ected humour,
             or randomised words whi.
           </p>
-          <div className="grid grid-rows-3 gap-6">
-            <Button label={"Agendar atención"} href="agendamiento" />
-            <Button label={"Ver doctores"} href="especialistas" />
-            <Button label={"Ver servicios"} href="servicios" />
+          <div className="grid grid-rows-3 gap-4">
+            <Button label={"Agendar atención"} action="/agendar" />
+            <Button label={"Ver doctores"} action="/doctores" />
+            <Button label={"Ver servicios"} action="/especialidades" />
           </div>
         </div>
 
         <Image
-          className="h-[500px] w-auto ml-auto"
+          className="h-[500px] w-auto mx-auto md:ml-auto"
           src="/about-us.webp"
           width={500}
           height={500}

@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <>
       <Navbar />
-      <main className="mt-[68px] min-h-screen">{children}</main>
+      <main className="mt-[80px] min-h-screen w-full">{children}</main>
       <Footer />
     </>
   );

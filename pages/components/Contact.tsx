@@ -6,9 +6,9 @@ import ContactForm from "@/components/ContactForm";
 export default function Contact() {
   return (
     <div className="section">
-      <div className="grid grid-cols-2">
+      <div className="grid md:grid-cols-2">
         <Image
-          className="h-[500px] w-auto mx-auto"
+          className="hidden md:block h-[500px] w-auto mx-auto"
           src="/about-us.webp"
           width={500}
           height={500}
