@@ -9,14 +9,14 @@ export default function Footer() {
     <footer className="bg-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl px-2 py-6 md:pt-20">
         <div className="grid md:grid-cols-2 gap-10">
-          <a href="/" className="flex justify-center py-10 md:py-0">
+          <Link href="/" className="flex justify-center py-10 md:py-0">
             <Image
               src="/logo.png"
               alt="Logo Viluan Logo"
               width="500"
               height="267"
             />
-          </a>
+          </Link>
           <div className="grid grid-cols-2 gap-8 sm:gap-6">
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
@@ -24,7 +24,7 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 {routes.map((route) => (
-                  <li className="mb-4">
+                  <li key={route.label} className="mb-4">
                     <Link href={route.path}>{route.label}</Link>
                   </li>
                 ))}
@@ -36,7 +36,7 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 {contact.map((item) => (
-                  <li className="mb-4">
+                  <li key={item.label} className="mb-4">
                     <Link href={item.href}>{item.label}</Link>
                   </li>
                 ))}
@@ -48,9 +48,9 @@ export default function Footer() {
         <div className="flex justify-end">
           <span className="text-xs text-gray-500 sm:text-center dark:text-gray-400">
             Desarrollado por{" "}
-            <a href="https://www.poliedro.io" className="hover:underline">
+            <Link href="https://www.poliedro.io" className="hover:underline">
               Poliedro
-            </a>
+            </Link>
           </span>
         </div>
       </div>
