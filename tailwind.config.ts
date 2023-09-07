@@ -9,7 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        hero: "url('/hero.webp')",
+        hero: "url('/img/hero.webp')",
+        "doctors-hero": "url('/img/doctors-hero.webp')",
+        "specialties-hero": "url('/img/specialties-hero.jpg')",
+        "contact-hero": "url('/img/contact-hero.jpg')",
+        "appointment-hero": "url('/img/appointment-hero.jpg')",
       },
       colors: {
         primary: {

@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import PageHero from "@/components/PageHero";
 import SpecialtiesCards from "@/components/SpecialtiesCards";
 import { getSpecialties } from "@/services/getSpecialties";
 import { Specialty } from "@/types";
@@ -6,16 +7,20 @@ import React from "react";
 
 export default function SpecialtiesPage({ items }: { items: Specialty[] }) {
   return (
-    <div className="section">
-      <Header
-        title="Especialidades"
-        uppertitle={"algun texto"}
-        align={"center"}
-      />
-      <div>
-        <SpecialtiesCards items={items} />
+    <>
+      <PageHero bgClass="bg-specialties-hero" />
+
+      <div className="section">
+        <Header
+          title="Medicina y odontología"
+          uppertitle={"nuestras especialidades"}
+          align={"center"}
+        />
+        <div>
+          <SpecialtiesCards items={items} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

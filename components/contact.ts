@@ -8,7 +8,7 @@ export const contact: {
     href: "mailto:contacto@viluan.cl",
   },
   {
-    label: "+569",
-    href: "tel:+569",
+    label: "+5698455558",
+    href: "tel:+5698455558",
   },
 ];

@@ -16,10 +16,11 @@ export default function Hero() {
             Agenda tu atención médica u dontológica. Estaremos encantados de
             atenderte
           </p>
-          <div className="flex gap-4 w-full mt-8">
+          <div className="flex flex-col md:flex-row gap-4 w-full mt-8">
             <Button block={true} label="Agendar atención" action="/agendar" />
             <Button
-              color="secondary"
+              mode="outline"
+              color="primary"
               block={true}
               label="Saber más"
               action="#us"

@@ -14,7 +14,7 @@ export default function Banner() {
         />
       </div>
       <div className=" flex items-center justify-center px-4 md:pl-10 py-20">
-        <p className="text-3xl text-white">
+        <p className="text-3xl text-white leading-10">
           Te invitamos a descubrir un lugar donde la salud y la sonrisa se unen
           en un solo espacio.
         </p>

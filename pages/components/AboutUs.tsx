@@ -20,13 +20,19 @@ export default function AboutUs() {
             experiencia en medicina general y odontología.
           </p>
           <div className="grid grid-rows-3 gap-4">
-            <Button label={"Agendar atención"} action="/agendar" />
             <Button
+              mode="outline"
+              label={"Agendar atención"}
+              action="/agendar"
+            />
+            <Button
+              mode="outline"
               color="secondary"
               label={"Ver doctores"}
               action="/doctores"
             />
             <Button
+              mode="outline"
               color="secondary"
               label={"Ver servicios"}
               action="/especialidades"

@@ -7,6 +7,19 @@ interface Doctor {
   phone: string;
   photoURL: string;
   summary: string;
+  socials?: Social[];
+}
+
+interface Social {
+  name:
+    | "facebook"
+    | "instagram"
+    | "twitter"
+    | "linkedin"
+    | "youtube"
+    | "whatsapp"
+    | "web";
+  url: string;
 }
 
 interface Specialty {
