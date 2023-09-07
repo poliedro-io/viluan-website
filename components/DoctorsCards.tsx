@@ -17,6 +17,7 @@ export default function SpecialistsCards({ items = [], count }: Props) {
           <div key={id} className="card group overflow-hidden">
             <div className="h-[260px] overflow-hidden">
               <Image
+                loading="lazy"
                 width="500"
                 height="500"
                 className="rounded-t-md w-full object-cover group-hover:scale-105 transition-all duration-300 group-hover:filter group-hover:brightness-110"

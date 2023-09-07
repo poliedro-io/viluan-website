@@ -44,6 +44,7 @@ export default function SpecialtiesCards({
               className="ml-auto rounded-md h-full object-cover"
               width="500"
               height="500"
+              loading="lazy"
               src={selectedService.photoURL}
               alt={selectedService.name}
             />
@@ -56,7 +57,12 @@ export default function SpecialtiesCards({
               {selectedService.name}
             </h2>
             <p className="mb-10">{selectedService.description}</p>
-            <Button mode="outline" label="Agendar atención" action="/agendar" />
+            <Button
+              block
+              mode="outline"
+              label="Agendar atención"
+              action="/agendar"
+            />
           </div>
         </div>
       )}

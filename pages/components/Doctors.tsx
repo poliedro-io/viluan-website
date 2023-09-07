@@ -17,8 +17,9 @@ export default function Doctors({ data }: DoctorsProps) {
           align="center"
         />
         <SpecialistsCards items={data} count={3} />
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 mx-auto max-w-sm">
           <Button
+            block
             color="secondary"
             label="Ver todos los especialistas"
             action="/doctores"
