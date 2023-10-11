@@ -13,12 +13,12 @@ export default function SpecialtiesCards({
   const selectedService = items?.length ? items[selectedIndex] : null;
   return (
     <div>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="flex justify-center gap-6">
         {items.map(({ name, iconURL }, i) => (
           <div
             key={i}
             onClick={() => setSelectedIndex(i)}
-            className={`max-w-[200px] flex flex-col justify-center gap-4 items-center cursor-pointer text-center p-6 bg-white rounded-lg shadow ${
+            className={`max-w-[200px] w-full flex flex-col justify-center gap-4 items-center cursor-pointer text-center p-6 bg-white rounded-lg shadow ${
               i === selectedIndex
                 ? "bg-gradient-to-r from-blue-800 to-blue-500 text-white"
                 : "hover:bg-blue-50 text-blue-800"
@@ -26,7 +26,7 @@ export default function SpecialtiesCards({
           >
             <Image
               className={i === selectedIndex ? "invert" : "colorize-blue"}
-              src={iconURL}
+              src={iconURL || "/img/medical.png"}
               alt={name}
               width="80"
               height="80"
@@ -45,7 +45,7 @@ export default function SpecialtiesCards({
               width="500"
               height="500"
               loading="lazy"
-              src={selectedService.photoURL}
+              src={selectedService.imageURL || "/default.png"}
               alt={selectedService.name}
             />
             <div className="md:hidden mt-4">

@@ -4,38 +4,41 @@ import DoctorSchedule from "@/components/appointment/DoctorSchedule";
 import { getDoctor, getDoctors } from "@/services/getDoctors";
 import { Doctor } from "@/types";
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 import { FaArrowLeft, FaPhoneAlt, FaRegEnvelope } from "react-icons/fa";
 
-export default function SpecialistPage({ data }: { data: Doctor }) {
+export default function SpecialistPage({ data: doctor }: { data: Doctor }) {
+  const { imageURL, name, specialty, bio, email, phone } = doctor;
   return (
     <div className="section">
-      <Header title={data.name} uppertitle={data.specialty} align={"center"} />
+      <Header title={name} uppertitle={specialty.name} align={"center"} />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Image
           className="rounded-md"
-          src={data.photoURL}
-          alt={data.name}
+          src={imageURL || "/default.png"}
+          alt={name}
           width="500"
           height="500"
         />
         <div className="flex flex-col justify-between">
           <div>
-            <p>{data.summary}</p>
+            <p>{bio}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-              <Button
-                color="secondary"
-                icon={<FaRegEnvelope />}
-                label="Enviar email"
-                action={`mailto:${data.email}`}
-              />
-              <Button
-                color="secondary"
-                icon={<FaPhoneAlt />}
-                label="Llamar"
-                action={`tel:${data.phone}`}
-              />
+              {email && (
+                <Button
+                  color="secondary"
+                  icon={<FaRegEnvelope />}
+                  label="Enviar email"
+                  action={`mailto:${email}`}
+                />
+              )}
+              {phone && (
+                <Button
+                  color="secondary"
+                  icon={<FaPhoneAlt />}
+                  label="Llamar"
+                  action={`tel:${phone}`}
+                />
+              )}
             </div>
           </div>
 
@@ -52,7 +55,7 @@ export default function SpecialistPage({ data }: { data: Doctor }) {
         </div>
       </div>
       <div className="mt-8">
-        <DoctorSchedule doctor={data} withInfo={false} />
+        <DoctorSchedule doctor={doctor} withInfo={false} />
       </div>
     </div>
   );

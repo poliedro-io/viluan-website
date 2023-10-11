@@ -1,11 +1,13 @@
-import { Specialty } from "../types";
-import { MOCK_DATA } from "./mock-specialties";
+const url = process.env.API_URL + "specialties";
 
-export function getSpecialties(): Promise<Specialty[]> {
-  return Promise.resolve(MOCK_DATA);
+export async function getSpecialties(): Promise<any[]> {
+  const specialties = await fetch(url).then((res) => res.json());
+  return specialties;
 }
 
-export function getSpecialty(id: string): Promise<Specialty> {
-  const index = MOCK_DATA.findIndex((specialist) => specialist.id === id);
-  return Promise.resolve(MOCK_DATA[index]);
+export async function getSpecialty(id: string): Promise<any> {
+  const specialty = await getSpecialties().then((specialties) =>
+    specialties.find((specialty) => specialty.id === id)
+  );
+  return specialty;
 }

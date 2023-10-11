@@ -1,12 +1,11 @@
 interface Doctor {
   id: string;
   name: string;
-  specialty: string;
-  specialtyId: string;
+  specialty: Specialty;
   email: string;
   phone: string;
-  photoURL: string;
-  summary: string;
+  imageURL: string;
+  bio: string;
   socials?: Social[];
 }
 
@@ -26,7 +25,7 @@ interface Specialty {
   id: string;
   name: string;
   description: string;
-  photoURL: string;
+  imageURL: string;
   iconURL: string;
   // doctors: string[]; // DoctorID[]
 }
@@ -45,4 +44,4 @@ interface Schedule {
   time: string;
 }
 
-export { Doctor, Specialty, User, Schedule };
+export { Doctor, Schedule, Specialty, User };

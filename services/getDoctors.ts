@@ -1,11 +1,13 @@
-import { Doctor } from "../types";
-import { MOCK_DATA } from "./mock-doctors";
+const url = process.env.API_URL + "doctors";
 
-export function getDoctors(): Promise<Doctor[]> {
-  return Promise.resolve(MOCK_DATA);
+export async function getDoctors(): Promise<any[]> {
+  const doctors = await fetch(url).then((res) => res.json());
+  return doctors;
 }
 
-export function getDoctor(id: string): Promise<Doctor> {
-  const index = MOCK_DATA.findIndex((item) => item.id === id);
-  return Promise.resolve(MOCK_DATA[index]);
+export async function getDoctor(id: string): Promise<any> {
+  const doctor = await getDoctors().then((doctors) =>
+    doctors.find((doctor) => doctor.id === id)
+  );
+  return doctor;
 }
