@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import UserData from "./UserData";
-import { Doctor, Schedule, Specialty, User } from "@/types";
-import Select from "../Select";
-import { getSpecialties } from "@/services/getSpecialties";
 import { getDoctors } from "@/services/getDoctors";
+import { getSpecialties } from "@/services/getSpecialties";
+import { Doctor, Schedule, Specialty, User } from "@/types";
+import { useEffect, useState } from "react";
+import Select from "../Select";
 import DoctorSchedule from "./DoctorSchedule";
 
 const user = {
@@ -38,7 +37,7 @@ export default function Appointment() {
     getDoctors().then(setDoctors);
   }, []);
   const filteredDoctors = doctors.filter(
-    (doctor) => doctor.specialty === specialty
+    (doctor) => doctor.specialty.id === specialty
   );
   return (
     <div>

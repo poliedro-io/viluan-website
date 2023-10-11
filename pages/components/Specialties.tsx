@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
-import React from "react";
-import SpecialtiesCards from "../../components/SpecialtiesCards";
 import { Specialty } from "@/types";
+import SpecialtiesCards from "../../components/SpecialtiesCards";
 interface SpecialtiesProps {
   data: Specialty[];
 }
