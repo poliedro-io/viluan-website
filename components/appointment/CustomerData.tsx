@@ -55,8 +55,13 @@ export default function CustomerData({
       />
 
       <div className="grid grid-cols-2 gap-2 max-w-md mt-10 ml-auto">
-        <Button label={"Atras"} action={prev} />
-        <Button isDisabled={!isValid} label={"Siguiente"} action={next} />
+        <Button mode="outline" label={"Atras"} action={prev} />
+        <Button
+          mode="outline"
+          isDisabled={!isValid}
+          label={"Siguiente"}
+          action={next}
+        />
       </div>
     </form>
   );

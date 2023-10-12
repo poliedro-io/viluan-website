@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
+import ScheduleForm from "@/components/appointment/ScheduleForm";
 import { getDoctors, getSpecialties } from "@/services/ApiService";
 import { Doctor, Specialty } from "@/types";
 
@@ -22,9 +23,7 @@ export default function AppointmentPage({
           align={"center"}
         />
 
-        <div>
-          {/* <DoctorSchedule doctors={doctors} specialties={specialties} /> */}
-        </div>
+        <ScheduleForm doctors={doctors} specialties={specialties} />
       </div>
     </>
   );

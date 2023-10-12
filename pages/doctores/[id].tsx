@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import Header from "@/components/Header";
-import DoctorSchedule from "@/components/appointment/DoctorSchedule";
+import ScheduleForm from "@/components/appointment/ScheduleForm";
 import { getDoctor, getDoctors } from "@/services/ApiService";
 import { Doctor } from "@/types";
 import Image from "next/image";
@@ -19,7 +19,7 @@ export default function SpecialistPage({ data: doctor }: { data: Doctor }) {
           width="500"
           height="500"
         />
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col">
           <div>
             {bio ? (
               <p>{bio}</p>
@@ -60,8 +60,10 @@ export default function SpecialistPage({ data: doctor }: { data: Doctor }) {
           </div>
         </div>
       </div>
-      <div className="mt-8">
-        <DoctorSchedule doctor={doctor} />
+      <div className="mt-16">
+        <Header title={"Agendar cita"} align={"center"} />
+
+        <ScheduleForm doctor={doctor} />
       </div>
     </div>
   );

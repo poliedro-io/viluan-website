@@ -1,6 +1,8 @@
 import { sendAppointment } from "@/services/ApiService";
 import { Customer, Doctor } from "@/types";
-import { pick } from "lodash";
+import { minutesToStringTime } from "@/utils";
+import { format } from "date-fns";
+import { lowerCase, pick, startCase } from "lodash";
 import { useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, useState } from "react";
 import Button from "../Button";
@@ -54,9 +56,68 @@ export default function AppointmentConfirmation({
         </div>
       )}
       <h1 className="text-lg mb-4 font-bold">Confirmacion</h1>
-      {/* {JSON.stringify(data)} */}
+      <p>
+        Por favor confirme que los datos ingresados son correctos antes de
+        agendar la cita.
+      </p>
+
+      <div className="grid gap-6 mt-6">
+        <div>
+          <h1 className="mb-2 font-bold text-gray-600">Agendamiento</h1>
+          <div className="appointment">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Doctor:</td>
+                  <td>{startCase(data.doctor.name)}</td>
+                </tr>
+                <tr>
+                  <td>Especialidad:</td>
+                  <td>{startCase(data.doctor.specialty.name)}</td>
+                </tr>
+                <tr>
+                  <td>Fecha:</td>
+                  <td>{format(data.date, "dd-MM-yyyy")}</td>
+                </tr>
+                <tr>
+                  <td>Horario:</td>
+                  <td>
+                    {data.time.map((t) => minutesToStringTime(t)).join(" - ")}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h1 className="mb-2 font-bold text-gray-600">Mis datos</h1>
+          <div className="appointment">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Nombre:</td>
+                  <td>{startCase(data.customer.name)}</td>
+                </tr>
+                <tr>
+                  <td>RUT:</td>
+                  <td>{data.customer.rut}</td>
+                </tr>
+                <tr>
+                  <td>Telefono:</td>
+                  <td>{data.customer.phone}</td>
+                </tr>
+                <tr>
+                  <td>Email:</td>
+                  <td>{lowerCase(data.customer.email) || "sin datos"}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-2 gap-2 max-w-md mt-10 ml-auto">
-        <Button label={"Atras"} action={prev} />
+        <Button mode="outline" label={"Atras"} action={prev} />
         <Button isDisabled={isLoading} label={"Confirmar"} action={sendData} />
       </div>
     </div>

@@ -31,3 +31,20 @@ p {
   filter: invert(37%) sepia(18%) saturate(3531%) hue-rotate(134deg)
     brightness(93%) contrast(84%);
 }
+
+.appointment {
+  @apply bg-gray-50 border border-gray-200  p-4 rounded-lg flex justify-center;
+}
+
+.appointment table {
+  @apply w-full;
+  table-layout: fixed;
+}
+
+.appointment table tr {
+  @apply border-b border-gray-100 hover:bg-gray-100;
+}
+
+.appointment table td {
+  @apply p-2;
+}

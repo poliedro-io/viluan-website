@@ -51,7 +51,7 @@ export default function ScheduleData({
   const availableHours = getAvailableHours(
     date,
     appointments,
-    doctor.schedule.dailySchedule
+    doctor.schedule?.dailySchedule
   );
 
   const handleDateChange = (date: CalendarDate) => {
@@ -64,7 +64,7 @@ export default function ScheduleData({
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 w-full">
+      <div className="grid md:grid-cols-2 gap-6">
         <div>
           <h1 className="text-lg mb-4 font-bold">Fecha</h1>
           <Calendar
@@ -77,24 +77,24 @@ export default function ScheduleData({
           />
         </div>
 
-        {isLoading ? (
-          <div className="flex justify-center items-center w-full">
-            <Spinner size={12} />
-          </div>
-        ) : (
-          <div className="flex-grow">
-            <h1 className="text-lg mb-4 font-bold">Horarios disponibles</h1>
-            <AvailableHours
-              hours={availableHours}
-              selectHour={setTime}
-              selectedHour={time}
-            />
-          </div>
-        )}
+        <div className="flex-grow relative">
+          {isLoading && (
+            <div className="absolute w-full h-full flex justify-center items-center bg-white bg-opacity-75">
+              <Spinner />
+            </div>
+          )}
+          <h1 className="text-lg mb-4 font-bold">Horarios disponibles</h1>
+          <AvailableHours
+            hours={availableHours}
+            selectHour={setTime}
+            selectedHour={time}
+          />
+        </div>
       </div>
       <div className="grid grid-cols-2 gap-2 max-w-md ml-auto mt-10">
         <div></div>
         <Button
+          mode="outline"
           isDisabled={!date || !time}
           action={() => setStep(2)}
           label="Siguiente"
@@ -112,7 +112,8 @@ function getAvailableDates(schedule: Schedule, month: Date) {
   return dates.map((d) => d.toDateString());
 }
 
-function isAvailableDate(date: Date, schedule: Schedule) {
+function isAvailableDate(date: Date, schedule?: Schedule) {
+  if (!schedule) return false;
   const { dailySchedule, availableFrom, availableTo } = schedule;
   if (isPast(endOfDay(date))) return false;
   const availableWeekDays = dailySchedule
