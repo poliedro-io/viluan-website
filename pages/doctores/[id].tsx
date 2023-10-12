@@ -1,7 +1,7 @@
 import Button from "@/components/Button";
 import Header from "@/components/Header";
 import DoctorSchedule from "@/components/appointment/DoctorSchedule";
-import { getDoctor, getDoctors } from "@/services/getDoctors";
+import { getDoctor, getDoctors } from "@/services/ApiService";
 import { Doctor } from "@/types";
 import Image from "next/image";
 import { FaArrowLeft, FaPhoneAlt, FaRegEnvelope } from "react-icons/fa";
@@ -21,7 +21,13 @@ export default function SpecialistPage({ data: doctor }: { data: Doctor }) {
         />
         <div className="flex flex-col justify-between">
           <div>
-            <p>{bio}</p>
+            {bio ? (
+              <p>{bio}</p>
+            ) : (
+              <p className="text-center">
+                <i>No hay informacion disponible de este doctor</i>
+              </p>
+            )}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               {email && (
                 <Button
@@ -55,7 +61,7 @@ export default function SpecialistPage({ data: doctor }: { data: Doctor }) {
         </div>
       </div>
       <div className="mt-8">
-        <DoctorSchedule doctor={doctor} withInfo={false} />
+        <DoctorSchedule doctor={doctor} />
       </div>
     </div>
   );

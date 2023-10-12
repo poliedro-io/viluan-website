@@ -1,4 +1,5 @@
 import { AppProps } from "next/app";
+import "./Calendar.css";
 import "./globals.css";
 import Layout from "./layout";
 

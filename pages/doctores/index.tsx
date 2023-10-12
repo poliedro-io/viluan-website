@@ -1,9 +1,8 @@
-import React from "react";
-import SpecialistsCards from "../../components/DoctorsCards";
 import Header from "@/components/Header";
-import { Doctor } from "@/types";
-import { getDoctors } from "@/services/getDoctors";
 import PageHero from "@/components/PageHero";
+import { getDoctors } from "@/services/ApiService";
+import { Doctor } from "@/types";
+import SpecialistsCards from "../../components/DoctorsCards";
 
 export default function SpecialistsPage({ items }: { items: Doctor[] }) {
   return (

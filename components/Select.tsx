@@ -31,7 +31,10 @@ export default function Select({
         className="form-field"
         {...props}
       >
-        {options.map(({ value, label }, i) => (
+        <option disabled value="">
+          -- Elija una opción --
+        </option>
+        {options.map(({ value, label }) => (
           <option key={`${id}-${value}`} value={value}>
             {label}
           </option>

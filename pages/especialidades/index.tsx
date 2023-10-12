@@ -1,9 +1,8 @@
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
 import SpecialtiesCards from "@/components/SpecialtiesCards";
-import { getSpecialties } from "@/services/getSpecialties";
+import { getSpecialties } from "@/services/ApiService";
 import { Specialty } from "@/types";
-import React from "react";
 
 export default function SpecialtiesPage({ items }: { items: Specialty[] }) {
   return (

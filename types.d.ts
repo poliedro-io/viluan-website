@@ -1,12 +1,51 @@
-interface Doctor {
-  id: string;
-  name: string;
-  specialty: Specialty;
-  email: string;
+export interface Doctor {
   phone: string;
-  imageURL: string;
   bio: string;
-  socials?: Social[];
+  id: string;
+  email: string;
+  schedule: Schedule;
+  specialty: Specialty;
+  name: string;
+  imageURL: string;
+}
+
+export interface Schedule {
+  dailySchedule: DailySchedule[];
+  appointmentsDurationInMinutes: number;
+  minutesBetweenAppointments: number;
+  windows: Window[];
+  workTime: WorkTime;
+  availableFrom: null;
+  availableTo: null;
+}
+
+export interface DailySchedule {
+  isAvailable: boolean;
+  appointments: Appointment[];
+  day: number;
+}
+
+export interface Appointment {
+  isAvailable: boolean;
+  time: number[];
+}
+
+export interface Window {
+  startTime: string;
+  endTime: string;
+}
+
+export interface WorkTime {
+  start: string;
+  end: string;
+}
+
+export interface Specialty {
+  imageFile: string;
+  imageURL: string;
+  name: string;
+  description: string;
+  id: string;
 }
 
 interface Social {
@@ -21,27 +60,38 @@ interface Social {
   url: string;
 }
 
-interface Specialty {
+export interface Specialty {
   id: string;
   name: string;
   description: string;
   imageURL: string;
-  iconURL: string;
+  iconURL?: string;
   // doctors: string[]; // DoctorID[]
 }
 
-interface User {
+export interface User {
   name: string;
   rut: string;
   phone: string;
   email?: string;
 }
-
-interface Schedule {
-  specialty: id; // SpecialtyID
-  doctor: string; // DoctorID
+export interface ScheduledAppointment {
   date: Date;
-  time: string;
+  doctor: ShortItem;
+  specialty: ShortItem;
+  id: string;
+  time: number[];
+  customer: Customer;
 }
 
-export { Doctor, Schedule, Specialty, User };
+export interface Customer {
+  rut: string;
+  phone: string;
+  name: string;
+  email: string;
+}
+
+export interface ShortItem {
+  id: string;
+  name: string;
+}

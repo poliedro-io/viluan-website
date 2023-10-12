@@ -1,9 +1,17 @@
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
-import Appointment from "@/components/appointment/Appointment";
-import React from "react";
+import { getDoctors, getSpecialties } from "@/services/ApiService";
+import { Doctor, Specialty } from "@/types";
 
-export default function AppointmentPage() {
+interface AppointmentPageProps {
+  doctors: Doctor[];
+  specialties: Specialty[];
+}
+
+export default function AppointmentPage({
+  doctors,
+  specialties,
+}: AppointmentPageProps) {
   return (
     <>
       <PageHero bgClass="bg-appointment-hero" />
@@ -15,9 +23,15 @@ export default function AppointmentPage() {
         />
 
         <div>
-          <Appointment />
+          {/* <DoctorSchedule doctors={doctors} specialties={specialties} /> */}
         </div>
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const doctors = await getDoctors();
+  const specialties = await getSpecialties();
+  return { props: { doctors, specialties } };
 }

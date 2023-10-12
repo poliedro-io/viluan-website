@@ -1,12 +1,11 @@
+import { getDoctors, getSpecialties } from "@/services/ApiService";
+import { Doctor, Specialty } from "@/types";
 import Head from "next/head";
 import AboutUs from "./components/AboutUs";
 import Banner from "./components/Banner";
 import Contact from "./components/Contact";
-import Hero from "./components/Hero";
 import Doctors from "./components/Doctors";
-import { getDoctors } from "@/services/getDoctors";
-import { getSpecialties } from "@/services/getSpecialties";
-import { Doctor, Specialty } from "@/types";
+import Hero from "./components/Hero";
 import Specialties from "./components/Specialties";
 
 interface HomeProps {

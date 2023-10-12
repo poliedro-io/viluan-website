@@ -2,7 +2,7 @@ import Button from "@/components/Button";
 import ContactForm from "@/components/ContactForm";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import {
   FaEnvelope,
   FaFacebook,
@@ -68,7 +68,7 @@ export default function ContactPage() {
             <div>
               <ul className="flex justify-center gap-10 mt-10">
                 {socials.map(({ name, url, icon }) => (
-                  <li key="name">
+                  <li key={name}>
                     <a target="_blank" href={url}>
                       <div className="text-5xl text-primary-800">{icon}</div>
                     </a>
