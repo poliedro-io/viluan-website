@@ -41,18 +41,13 @@ export async function getAppointments(doctorId: string, date: Date) {
 }
 
 export async function sendAppointment(data: any) {
-  console.log(data);
   const body = JSON.stringify(data);
-  const response = await new Promise((resolve, reject) =>
-    setTimeout(() => resolve({ message: "exito" }), 2000)
-  );
-  // const response = await fetch([CLIENT_API_URL, "appointments"].join("/"), {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body,
-  // }).then((res) => res.json());
-  console.log(response);
+  const response = await fetch(CLIENT_API_URL + "/appointments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body,
+  }).then((res) => res.json());
   return response;
 }
