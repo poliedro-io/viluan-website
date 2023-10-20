@@ -39,6 +39,9 @@ export default function ScheduleData({
 }: ScheduleProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [appointments, setAppointments] = useState<ScheduledAppointment[]>([]);
+  const [availableDates, setAvailableDates] = useState<string[]>(
+    getAvailableDates(doctor.schedule, date as Date)
+  );
   useEffect(() => {
     setIsLoading(true);
     getAppointments(doctor.id, date as Date)
@@ -47,7 +50,6 @@ export default function ScheduleData({
   }, [date, doctor.id]);
 
   const today = new Date();
-  const availableDates = getAvailableDates(doctor.schedule, date as Date);
   const availableHours = getAvailableHours(
     date,
     appointments,
@@ -59,6 +61,10 @@ export default function ScheduleData({
     setTime(null);
   };
 
+  const handleActiveDateChange = ({ activeStartDate }: any) => {
+    const availableDates = getAvailableDates(doctor.schedule, activeStartDate);
+    setAvailableDates(availableDates);
+  };
   const isDateDisabled: TileDisabledFunc = ({ date, view }) =>
     view === "month" && !availableDates.includes(date.toDateString());
 
@@ -73,6 +79,7 @@ export default function ScheduleData({
             locale="es"
             minDate={today}
             onChange={handleDateChange}
+            onActiveStartDateChange={handleActiveDateChange}
             value={date}
           />
         </div>
@@ -83,7 +90,9 @@ export default function ScheduleData({
               <Spinner />
             </div>
           )}
-          <h1 className="text-lg mb-4 font-bold">Horarios disponibles</h1>
+          <h1 className="text-lg mb-4 font-bold">
+            Horarios disponibles el {date?.toLocaleDateString("es-CL")}
+          </h1>
           <AvailableHours
             hours={availableHours}
             selectHour={setTime}
