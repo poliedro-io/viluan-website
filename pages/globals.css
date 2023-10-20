@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .section {
-  @apply container mx-auto py-20 px-2 md:px-10 lg:px-16;
+  @apply container mx-auto py-20 px-2 md:px-10 lg:px-16 max-w-6xl;
 }
 
 p {
