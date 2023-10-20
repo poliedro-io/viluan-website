@@ -1,3 +1,5 @@
+import { orderBy } from "lodash";
+
 const SERVER_API_URL = process.env.API_URL;
 const APPOINTMENTS_URL =
   "https://us-central1-viluan-5d339.cloudfunctions.net/api/appointments";
@@ -6,7 +8,7 @@ export async function getDoctors(): Promise<any[]> {
   const doctors = await fetch(SERVER_API_URL + "/doctors").then((res) =>
     res.json()
   );
-  return doctors;
+  return orderBy(doctors, "index");
 }
 
 export async function getDoctor(id: string): Promise<any> {
@@ -20,7 +22,7 @@ export async function getSpecialties(): Promise<any[]> {
   const specialties = await fetch(SERVER_API_URL + "/specialties").then((res) =>
     res.json()
   );
-  return specialties;
+  return orderBy(specialties, "index");
 }
 
 export async function getSpecialty(id: string): Promise<any> {
