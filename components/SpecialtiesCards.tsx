@@ -18,7 +18,7 @@ export default function SpecialtiesCards({
           <div
             key={i}
             onClick={() => setSelectedIndex(i)}
-            className={`max-w-[200px] w-full flex flex-col justify-center gap-4 items-center cursor-pointer text-center p-6 bg-white rounded-lg shadow ${
+            className={`max-w-[200px] w-full flex flex-col justify-center gap-2 items-center cursor-pointer text-center px-4 py-8 bg-white rounded-xl shadow ${
               i === selectedIndex
                 ? "bg-gradient-to-r from-blue-800 to-blue-500 text-white"
                 : "hover:bg-blue-50 text-blue-800"
@@ -31,7 +31,7 @@ export default function SpecialtiesCards({
               width="80"
               height="80"
             />
-            <span className="hidden md:block mb-2 text-sm tracking-tight">
+            <span className="hidden md:block text-sm tracking-tight">
               {name}
             </span>
           </div>
@@ -41,7 +41,7 @@ export default function SpecialtiesCards({
         <div className="mt-6 md:mt-20 overflow-hidden grid md:grid-cols-2 gap-6">
           <div className="h-[200px] md:h-[400px] overflow-hidden">
             <Image
-              className="ml-auto rounded-md h-full object-cover"
+              className="ml-auto rounded-xl h-full object-cover"
               width="500"
               height="500"
               loading="lazy"

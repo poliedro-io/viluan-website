@@ -7,11 +7,11 @@ interface SpecialtiesProps {
 
 export default function Specialties({ data }: SpecialtiesProps) {
   return (
-    <div id="servicios" className="bg-cyan-50">
+    <div id="servicios">
       <div className="section">
         <Header
           uppertitle="especialidades"
-          title="Conoce nuestros servicios médicos"
+          title="Ofrecemos una serie de especialidades médicas"
           align="center"
         />
         <SpecialtiesCards items={data} />

@@ -11,6 +11,7 @@ const config: Config = {
       backgroundImage: {
         hero: "url('/img/hero.webp')",
         "doctors-hero": "url('/img/doctors-hero.webp')",
+        "services-hero": "url('/img/services-hero.webp')",
         "specialties-hero": "url('/img/specialties-hero.jpg')",
         "contact-hero": "url('/img/contact-hero.jpg')",
         "appointment-hero": "url('/img/appointment-hero.jpg')",

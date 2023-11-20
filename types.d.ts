@@ -7,6 +7,7 @@ export interface Doctor {
   specialty: Specialty;
   name: string;
   imageURL: string;
+  index: number;
 }
 
 export interface Schedule {
@@ -41,11 +42,19 @@ export interface WorkTime {
 }
 
 export interface Specialty {
-  imageFile: string;
   imageURL: string;
   name: string;
   description: string;
   id: string;
+  index: number;
+}
+
+export interface Service {
+  imageURL: string;
+  name: string;
+  description: string;
+  id: string;
+  index: number;
 }
 
 interface Social {

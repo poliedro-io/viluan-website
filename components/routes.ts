@@ -7,12 +7,16 @@ export const routes: {
     label: "Inicio",
   },
   {
-    path: "/doctores",
-    label: "Doctores",
+    path: "/servicios",
+    label: "Servicios",
   },
   {
     path: "/especialidades",
     label: "Especialidades",
+  },
+  {
+    path: "/doctores",
+    label: "Doctores",
   },
   {
     path: "/agendar",

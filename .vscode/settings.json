@@ -1,0 +1,12 @@
+{
+  "cSpell.words": ["odontológico", "uppertitle", "Viluan"],
+  "cSpell.files": [
+    "**/*.md",
+    "**/*.js",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.jsx",
+    "**/*.html"
+  ],
+  "cSpell.language": "en,es"
+}

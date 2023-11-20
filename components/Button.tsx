@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 
 interface ButtonProps {
   label: string;
@@ -34,7 +33,7 @@ export default function Button({
 }: ButtonProps) {
   const isLink = typeof action === "string";
   const colorClass = colors[[color, mode].join("-") as keyof typeof colors];
-  const className = `flex gap-2 focus:ring-4 focus:outline-none font-medium rounded-md text-md px-6 py-3.5 text-center inline-flex justify-center items-center ${colorClass} ${
+  const className = `flex gap-2 focus:ring-4 focus:outline-none font-medium rounded-lg text-md px-6 py-3.5 text-center inline-flex justify-center items-center ${colorClass} ${
     block ? "w-full" : ""
   } ${
     isDisabled ? "opacity-50 cursor-not-allowed" : ""

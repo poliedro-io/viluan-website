@@ -25,7 +25,7 @@ export default function SpecialistPage({ data: doctor }: { data: Doctor }) {
               <p>{bio}</p>
             ) : (
               <p className="text-center">
-                <i>No hay informacion disponible de este doctor</i>
+                <i>No hay información disponible de este doctor</i>
               </p>
             )}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">

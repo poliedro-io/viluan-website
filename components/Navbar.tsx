@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import React, { useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React from "react";
 import { routes } from "./routes";
 
 export default function Navbar() {
@@ -20,9 +20,9 @@ export default function Navbar() {
           <Image
             src="/logo-chico.png"
             className="h-12 w-auto"
-            alt="Flowbite Logo"
             width="120"
             height="60"
+            alt="Logo Viluan"
           />
         </Link>
         <button
