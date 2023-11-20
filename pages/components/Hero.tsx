@@ -1,5 +1,4 @@
 import Button from "@/components/Button";
-import React from "react";
 
 export default function Hero() {
   return (
@@ -13,7 +12,7 @@ export default function Hero() {
             Tu salud en buenas manos
           </h1>
           <p className="text-gray-800 text-lg">
-            Agenda tu atención médica u dontológica. Estaremos encantados de
+            Agenda tu atención médica u odontológica. Estaremos encantados de
             atenderte
           </p>
           <div className="flex flex-col md:flex-row gap-4 w-full mt-8">

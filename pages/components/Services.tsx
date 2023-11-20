@@ -8,7 +8,6 @@ interface ServicesProps {
 }
 
 export default function Services({ data }: ServicesProps) {
-  console.log({ data });
   return (
     <div id="servicios" className="bg-cyan-50">
       <div className="section">

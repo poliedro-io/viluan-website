@@ -44,7 +44,7 @@ export default function SpecialtiesCards({
               className="ml-auto rounded-xl h-full object-cover"
               width="500"
               height="500"
-              loading="lazy"
+              loading="eager"
               src={selectedService.imageURL || "/default.png"}
               alt={selectedService.name}
             />
