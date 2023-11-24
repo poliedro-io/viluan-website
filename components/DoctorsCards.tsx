@@ -4,15 +4,13 @@ import Image from "next/image";
 
 interface Props {
   items: Doctor[];
-  count?: number;
 }
 
-export default function SpecialistsCards({ items = [], count }: Props) {
-  const _items = items.slice(0, count || items.length);
+export default function SpecialistsCards({ items = [] }: Props) {
   return (
     <div className="stack">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {_items.map(({ id, name, specialty, imageURL }) => (
+        {items.map(({ id, name, specialty, imageURL }) => (
           <div key={id} className="card group overflow-hidden">
             <div className="h-[300px] overflow-hidden">
               <Image

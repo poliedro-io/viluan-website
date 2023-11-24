@@ -6,19 +6,21 @@ import React from "react";
 
 export default function SpecialtiesCards({
   items = [],
+  count,
 }: {
   items: Specialty[];
+  count?: number;
 }) {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const selectedService = items?.length ? items[selectedIndex] : null;
   return (
-    <div>
-      <div className="flex justify-center gap-6">
+    <div className="border border-gray-100 p-2 md:p-8 rounded-xl shadow-xl">
+      <div className="flex justify-center gap-2 md:gap-8">
         {items.map(({ name, iconURL }, i) => (
           <div
             key={i}
             onClick={() => setSelectedIndex(i)}
-            className={`max-w-[200px] w-full flex flex-col justify-center gap-2 items-center cursor-pointer text-center px-4 py-8 bg-white rounded-xl shadow ${
+            className={`max-w-[150px] w-full flex flex-col justify-center gap-2 items-center cursor-pointer text-center p-4 md:py-6 bg-white rounded-xl shadow ${
               i === selectedIndex
                 ? "bg-gradient-to-r from-blue-800 to-blue-500 text-white"
                 : "hover:bg-blue-50 text-blue-800"
@@ -28,8 +30,8 @@ export default function SpecialtiesCards({
               className={i === selectedIndex ? "invert" : "colorize-blue"}
               src={iconURL || "/img/medical.png"}
               alt={name}
-              width="80"
-              height="80"
+              width="60"
+              height="60"
             />
             <span className="hidden md:block text-sm tracking-tight">
               {name}

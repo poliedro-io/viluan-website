@@ -55,3 +55,7 @@ p {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.text-balance {
+  text-wrap: balance;
+}

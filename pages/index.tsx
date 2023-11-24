@@ -1,4 +1,4 @@
-import { getDoctors, getServices, getSpecialties } from "@/services/ApiService";
+import { getDoctors, getSpecialties } from "@/services/ApiService";
 import { Doctor, Service, Specialty } from "@/types";
 import Head from "next/head";
 import AboutUs from "./components/AboutUs";
@@ -40,8 +40,8 @@ export default function HomePage({
 }
 
 export async function getStaticProps() {
-  const doctors = await getDoctors();
-  const specialties = await getSpecialties();
-  const services = await getServices();
+  const doctors = (await getDoctors()).slice(0, 3);
+  const specialties = (await getSpecialties()).slice(0, 4);
+  const services = (await getSpecialties()).slice(0, 3);
   return { props: { doctors, specialties, services } };
 }

@@ -1,8 +1,7 @@
-import Header from "@/components/Header";
-import React from "react";
-import SpecialistsCards from "../../components/DoctorsCards";
-import { Doctor } from "@/types";
 import Button from "@/components/Button";
+import Header from "@/components/Header";
+import { Doctor } from "@/types";
+import DoctorsCards from "../../components/DoctorsCards";
 
 interface DoctorsProps {
   data: Doctor[];
@@ -16,8 +15,8 @@ export default function Doctors({ data }: DoctorsProps) {
           title="Un equipo de profesionales altamente calificados"
           align="center"
         />
-        <SpecialistsCards items={data} count={3} />
-        <div className="mt-10 mx-auto max-w-sm">
+        <DoctorsCards items={data} />
+        <div className="mt-20 mx-auto max-w-sm">
           <Button
             block
             color="secondary"

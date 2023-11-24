@@ -38,7 +38,7 @@ export async function getServices(): Promise<Service[]> {
   const services = await fetch(SERVER_API_URL + "/services").then((res) =>
     res.json()
   );
-  return services;
+  return orderBy(services, "index");
 }
 
 export async function getService(id: string): Promise<Service | null> {

@@ -11,7 +11,7 @@ export default function SpecialtiesPage({ items }: { items: Specialty[] }) {
 
       <div className="section">
         <Header
-          title="Medicina y odontología"
+          title="Conoce nuestras especialidades médicas y odontológicas"
           uppertitle={"nuestras especialidades"}
           align={"center"}
         />

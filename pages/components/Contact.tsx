@@ -1,8 +1,6 @@
-import Header from "@/components/Header";
-import React from "react";
-import Image from "next/image";
-import ContactForm from "@/components/ContactForm";
 import Button from "@/components/Button";
+import ContactForm from "@/components/ContactForm";
+import Header from "@/components/Header";
 
 export default function Contact() {
   return (
