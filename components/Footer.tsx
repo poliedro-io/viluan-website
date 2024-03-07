@@ -17,27 +17,28 @@ export default function Footer() {
               height="267"
             />
           </Link>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-6 px-4">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-md font-semibold text-gray-900 uppercase dark:text-white">
                 Mapa del sitio
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 {routes.map((route) => (
-                  <li key={route.label} className="mb-4">
+                  <li key={route.label} className="mb-4 hover:text-white">
                     <Link href={route.path}>{route.label}</Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-md font-semibold text-gray-900 uppercase dark:text-white">
                 Contacto
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 {contact.map((item) => (
-                  <li key={item.label} className="mb-4">
-                    <Link href={item.href}>{item.label}</Link>
+                  <li key={item.label} className="mb-4 flex gap-2 items-center hover:text-white">
+                    {item.icon}
+                    <Link target="_blank" href={item.href}>{item.label}</Link>
                   </li>
                 ))}
               </ul>

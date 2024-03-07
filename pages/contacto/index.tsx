@@ -46,7 +46,7 @@ export default function ContactPage() {
                 mode="outline"
                 block
                 icon={<FaWhatsapp />}
-                label={"+569 9456252"}
+                label={"+569 83767116"}
                 action={`https://wa.me/56983767116`}
               />
               <Button
