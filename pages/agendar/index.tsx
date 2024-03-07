@@ -15,13 +15,16 @@ export default function AppointmentPage({
 }: AppointmentPageProps) {
   return (
     <>
-      <PageHero bgClass="bg-appointment-hero" />
-      <div className="section">
-        <Header
+      <PageHero bgClass="bg-appointment-hero" >
+      <Header
           title={"Agenda tu hora"}
           uppertitle={"agendamiento"}
           align={"center"}
+          noMargin
+          white
         />
+        </PageHero>
+      <div className="section-page">
 
         <ScheduleForm doctors={doctors} specialties={specialties} />
       </div>

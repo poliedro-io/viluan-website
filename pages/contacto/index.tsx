@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
 import { PropsWithChildren } from "react";
-import { FaEnvelope, FaInstagram } from "react-icons/fa";
+import { FaEnvelope, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Title = ({ children }: PropsWithChildren) => {
   return (
@@ -34,20 +34,21 @@ const socials = [
 export default function ContactPage() {
   return (
     <>
-      <PageHero bgClass="bg-contact-hero" />
-      <div className="section">
-        <Header title="Contáctanos" uppertitle="" align="center" />
+      <PageHero bgClass="bg-contact-hero">
+      <Header title="Contáctanos" align="center" noMargin white />
+</PageHero>
+      <div className="section-page">
         <div className="grid grid-cols-1 gap-[5rem] mx-auto">
           <div>
             <Title>Contacto directo</Title>
             <div className="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
-              {/* <Button
+              <Button
                 mode="outline"
                 block
-                icon={<FaPhoneAlt />}
+                icon={<FaWhatsapp />}
                 label={"+569 9456252"}
-                action={`tel:+5699456252`}
-              /> */}
+                action={`https://wa.me/56983767116`}
+              />
               <Button
                 mode="outline"
                 block
@@ -94,10 +95,11 @@ export default function ContactPage() {
 
 const Map = () => {
   return (
+
     <>
       <iframe
         className="block md:hidden border-0"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.8490105121095!2d-70.40359052369557!3d-23.645577764693513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96afd53dfb229183%3A0xfdf0d76ae0898bf1!2sEdumedica!5e0!3m2!1ses!2scl!4v1700790479651!5m2!1ses!2scl"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.848537521651!2d-70.40541811114505!3d-23.6455947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96afd5357e6f983b%3A0x664231478af523da!2sEdificio%20singular!5e0!3m2!1ses!2scl!4v1709828387436!5m2!1ses!2scl"
         width="600"
         height="450"
         loading="lazy"
@@ -105,9 +107,10 @@ const Map = () => {
         allowFullScreen={true}
       ></iframe>
 
+
       <iframe
         className="hidden md:block border-0"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.8490105121095!2d-70.40359052369557!3d-23.645577764693513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96afd53dfb229183%3A0xfdf0d76ae0898bf1!2sEdumedica!5e0!3m2!1ses!2scl!4v1700790760452!5m2!1ses!2scl"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.848537521651!2d-70.40541811114505!3d-23.6455947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96afd5357e6f983b%3A0x664231478af523da!2sEdificio%20singular!5e0!3m2!1ses!2scl!4v1709828387436!5m2!1ses!2scl"
         width="800"
         height="600"
         allowFullScreen={true}

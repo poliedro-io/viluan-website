@@ -6,6 +6,10 @@
   @apply container mx-auto py-32 px-2 md:px-10 lg:px-16 max-w-6xl;
 }
 
+.section-page {
+  @apply container mx-auto py-16 px-2 md:px-10 lg:px-16 max-w-6xl;
+}
+
 p {
   @apply text-gray-700 text-base;
 }

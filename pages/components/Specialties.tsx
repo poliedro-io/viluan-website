@@ -12,7 +12,7 @@ export default function Specialties({ data }: SpecialtiesProps) {
       <div className="section">
         <Header
           uppertitle="especialidades"
-          title="Ofrecemos una serie de especialidades médicas"
+          title="Ofrecemos una serie de especialidades"
           align="center"
         />
         <SpecialtiesCards items={data} />

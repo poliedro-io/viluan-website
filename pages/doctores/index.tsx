@@ -7,13 +7,17 @@ import SpecialistsCards from "../../components/DoctorsCards";
 export default function SpecialistsPage({ items }: { items: Doctor[] }) {
   return (
     <>
-      <PageHero bgClass="bg-doctors-hero" />
-      <div className="section">
-        <Header
+      <PageHero bgClass="bg-doctors-hero">
+      <Header
           title="Conoce a nuestros especialistas"
           uppertitle="nuestro equipo"
           align="center"
+          noMargin
+          white
         />
+      </PageHero>
+      <div className="section-page">
+
         <SpecialistsCards items={items} />
       </div>
     </>

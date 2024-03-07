@@ -7,14 +7,16 @@ import { Specialty } from "@/types";
 export default function SpecialtiesPage({ items }: { items: Specialty[] }) {
   return (
     <>
-      <PageHero bgClass="bg-specialties-hero" />
-
-      <div className="section">
-        <Header
-          title="Conoce nuestras especialidades médicas y odontológicas"
+      <PageHero bgClass="bg-specialties-hero">
+         <Header
+          title="Conoce nuestras especialidades"
           uppertitle={"nuestras especialidades"}
           align={"center"}
-        />
+          noMargin
+          white
+        /></PageHero>
+
+      <div className="section-page">
         <div>
           <SpecialtiesCards items={items} />
         </div>

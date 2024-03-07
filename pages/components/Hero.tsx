@@ -11,8 +11,8 @@ export default function Hero() {
           <h1 className="text-6xl text-gray-800 font-bold mb-8">
             Tu salud en buenas manos
           </h1>
-          <p className="text-gray-800 text-lg">
-            Agenda tu atención médica u odontológica. Estaremos encantados de
+          <p className="text-gray-800 text-xl">
+            Agenda tu atención con nuestros especialistas. Estaremos encantados de
             atenderte
           </p>
           <div className="flex flex-col md:flex-row gap-4 w-full mt-8">

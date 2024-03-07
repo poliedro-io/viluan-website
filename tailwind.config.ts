@@ -10,11 +10,16 @@ const config: Config = {
     extend: {
       backgroundImage: {
         hero: "url('/img/hero.webp')",
-        "doctors-hero": "url('/img/doctors-hero.webp')",
-        "services-hero": "url('/img/services-hero.webp')",
-        "specialties-hero": "url('/img/specialties-hero.jpg')",
-        "contact-hero": "url('/img/contact-hero.jpg')",
-        "appointment-hero": "url('/img/appointment-hero.jpg')",
+        "doctors-hero": "url('/img/doctores.jpg')",
+        "services-hero": "url('/img/servicios.jpg')",
+        "specialties-hero": "url('/img/especialidades.jpg')",
+        "contact-hero": "url('/img/contacto.jpg')",
+        "appointment-hero": "url('/img/agendamiento.jpg')",
+        // "doctors-hero": "url('/img/doctors-hero.webp')",
+        // "services-hero": "url('/img/services-hero.webp')",
+        // "specialties-hero": "url('/img/specialties-hero.jpg')",
+        // "contact-hero": "url('/img/contact-hero.jpg')",
+        // "appointment-hero": "url('/img/appointment-hero.jpg')",
       },
       colors: {
         primary: {

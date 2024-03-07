@@ -7,13 +7,16 @@ import { Specialty } from "@/types";
 export default function ServicesPage({ items }: { items: Specialty[] }) {
   return (
     <>
-      <PageHero bgClass="bg-services-hero" />
-      <div className="section">
+      <PageHero bgClass="bg-services-hero">
         <Header
-          title="Medicina, Odontología y Armonización Facial"
+          title="Odontología, armonización facial, medicina, ginecología, psicología y nutrición"
           uppertitle="nuestros servicios"
           align="center"
+          noMargin
+          white
         />
+        </PageHero>
+      <div className="section-page">
         <ServicesCards data={items} />
       </div>
     </>

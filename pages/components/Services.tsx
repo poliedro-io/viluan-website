@@ -11,8 +11,8 @@ export default function Services({ data }: ServicesProps) {
     <div id="servicios" className="bg-cyan-50">
       <div className="section">
         <Header
-          uppertitle="Servicios médicos"
-          title="Conoce nuestros servicios médicos"
+          uppertitle="Servicios"
+          title="Conoce nuestros servicios que brindarán una atención de calidad y confianza"
           align="center"
         />
 

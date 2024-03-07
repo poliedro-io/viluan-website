@@ -13,12 +13,12 @@ export default function AboutUs() {
             uppertitle="sobre nosotros"
             align="left"
           />
-          <p className="mb-8">
-            Somos una clínica médica y odontológica ubicada en Antofagasta.
-            Nuestro enfoque es la salud integral de nuestros pacientes. Contamos
-            con un equipo de profesionales altamente capacitados y con amplia
-            experiencia en medicina general y odontología.
+          <p className="mb-2">
+          Somos un centro médico y odontológico ubicado en Antofagasta cuyo enfoque es la salud integral de nuestros pacientes.
+Ofrecemos servicios de <b>odontología</b>, <b>armonización facial</b>, <b>medicina</b>, <b>ginecología</b>, <b>psicología</b> y <b>nutrición</b>.
           </p>
+          <p className="mb-8">Contamos con un equipo de profesionales altamente capacitados y con amplia experiencia.</p>
+
           <div className="grid grid-rows-3 gap-4">
             <Button
               mode="outline"
@@ -42,7 +42,7 @@ export default function AboutUs() {
 
         <Image
           className="h-[500px] w-auto mx-auto md:ml-auto rounded-md"
-          src="/about-us.webp"
+          src="/img/nosotros.jpg"
           width={500}
           height={500}
           alt="Nuestra clínica"
