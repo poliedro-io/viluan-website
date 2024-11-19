@@ -128,7 +128,7 @@ function isAvailableDate(date: Date, schedule?: Schedule) {
   const availableWeekDays = dailySchedule
     .filter((day) => day.isAvailable)
     .map(({ day }) => day);
-  if (!availableWeekDays.includes(date.getDay())) return false;
+  if (!availableWeekDays.includes(getWeekDay(date))) return false;
   if (availableFrom && isBefore(date, availableFrom)) return false;
   if (availableTo && isAfter(date, availableTo)) return false;
   return true;
@@ -142,7 +142,7 @@ function getAvailableHours(
   if (!dailySchedule || !_date || !isDate(_date)) return [];
   const date = _date as Date;
 
-  const weekDay = date.getDay();
+  const weekDay = getWeekDay(date);
   const appointmentsTimes = appointments.map(({ time }) => time.toString());
   let availableAppointments = dailySchedule[weekDay].appointments;
   if (isToday(date)) {
@@ -157,4 +157,8 @@ function getAvailableHours(
     .map(({ time }) => time)
     .filter((time) => !appointmentsTimes.includes(time.toString()));
   return availableHours as [number, number][];
+}
+
+function getWeekDay(date: Date) {
+  return (date.getDay() + 6) % 7;
 }
